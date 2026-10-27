@@ -1,0 +1,592 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Фикслаб — ремонт телефонов за 30 минут с гарантией до 12 месяцев</title>
+  <meta name="description" content="Ремонт iPhone, Samsung и Xiaomi в Москве: замена экрана, аккумулятора, разъёма и камеры при вас. Бесплатная диагностика, фиксированная цена, гарантия до 12 месяцев.">
+  <link rel="canonical" href="https://fixlab.example/">
+  <meta name="theme-color" content="#F6F7FB">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:site_name" content="Фикслаб">
+  <meta property="og:title" content="Фикслаб — ремонт телефонов за 30 минут">
+  <meta property="og:description" content="Бесплатная диагностика, ремонт при вас, гарантия до 12 месяцев. Актуальные цены на сайте.">
+  <meta property="og:url" content="https://fixlab.example/">
+  <meta property="og:image" content="https://fixlab.example/og.png">
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="assets/css/styles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Фикслаб",
+    "description": "Сервис ремонта смартфонов: замена экрана, аккумулятора, разъёма зарядки и камеры.",
+    "url": "https://fixlab.example/",
+    "telephone": "+7-900-000-00-00",
+    "priceRange": "990–24990 ₽",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "ул. Примерная, 12",
+      "addressLocality": "Москва",
+      "addressCountry": "RU"
+    },
+    "openingHoursSpecification": [{
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      "opens": "10:00",
+      "closes": "21:00"
+    }],
+    "makesOffer": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Замена экрана iPhone 13" }, "priceSpecification": { "@type": "PriceSpecification", "minPrice": 9990, "priceCurrency": "RUB" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Замена аккумулятора iPhone 13" }, "priceSpecification": { "@type": "PriceSpecification", "minPrice": 4490, "priceCurrency": "RUB" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Замена экрана Samsung Galaxy S23" }, "priceSpecification": { "@type": "PriceSpecification", "minPrice": 14990, "priceCurrency": "RUB" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Замена разъёма зарядки Xiaomi Redmi Note 12" }, "priceSpecification": { "@type": "PriceSpecification", "minPrice": 1990, "priceCurrency": "RUB" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Диагностика смартфона" }, "price": 0, "priceCurrency": "RUB" }
+    ]
+  }
+  </script>
+
+  <script src="config.js"></script>
+  <script type="module" src="assets/js/app.js"></script>
+</head>
+<body>
+  <!-- Спрайт иконок: простые линейные SVG, 24×24, stroke = currentColor -->
+  <svg width="0" height="0" class="sprite" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4.5c0-.8.7-1.5 1.5-1.5h2l1.5 4-2 1.2a11 11 0 0 0 5.8 5.8L15 12l4 1.5v2c0 .8-.7 1.5-1.5 1.5A15.5 15.5 0 0 1 5 4.5Z" transform="translate(0 2)"/></symbol>
+      <symbol id="i-smartphone" viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.8"/><path d="M10.5 18.5h3"/></symbol>
+      <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+      <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 4.5 6v5.5c0 4.6 3.2 8.3 7.5 9.5 4.3-1.2 7.5-4.9 7.5-9.5V6L12 3Z"/><path d="m8.8 12 2.2 2.2 4.2-4.4"/></symbol>
+      <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></symbol>
+      <symbol id="i-chip" viewBox="0 0 24 24"><rect x="6.5" y="6.5" width="11" height="11" rx="2"/><path d="M9.5 3v3.5M14.5 3v3.5M9.5 17.5V21M14.5 17.5V21M3 9.5h3.5M3 14.5h3.5M17.5 9.5H21M17.5 14.5H21"/></symbol>
+      <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12Z"/><circle cx="12" cy="12" r="3"/></symbol>
+      <symbol id="i-tag" viewBox="0 0 24 24"><path d="M3.5 12.3V4.5c0-.6.4-1 1-1h7.8l8.2 8.2a1.4 1.4 0 0 1 0 2l-6.8 6.8a1.4 1.4 0 0 1-2 0L3.5 12.3Z"/><circle cx="8.3" cy="8.3" r="1.4"/></symbol>
+      <symbol id="i-truck" viewBox="0 0 24 24"><path d="M2.5 6.5h11v9h-11zM13.5 9.5h4l3 3.2v2.8h-7"/><circle cx="6.5" cy="17" r="1.8"/><circle cx="17" cy="17" r="1.8"/></symbol>
+      <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="2.5"/><path d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5M12 14.5v2"/></symbol>
+      <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11Z"/><circle cx="12" cy="10" r="2.3"/></symbol>
+      <symbol id="i-send" viewBox="0 0 24 24"><path d="M21 3.5 3 10.8l6.8 2.4L21 3.5Zm0 0-6.5 17-4.7-7.3"/></symbol>
+      <symbol id="i-chat" viewBox="0 0 24 24"><path d="M12 3.5a8.5 8.5 0 0 0-7.4 12.7L3.5 20.5l4.4-1.1A8.5 8.5 0 1 0 12 3.5Z"/></symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+      <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+      <symbol id="i-wrench" viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 0 5 5L21 10a5.5 5.5 0 0 1-7.4 5.2L7.5 21.3a2 2 0 0 1-2.8-2.8l6.1-6.1A5.5 5.5 0 0 1 16 5l-1.3 1.3Z"/></symbol>
+      <symbol id="i-doc" viewBox="0 0 24 24"><path d="M6.5 3h7.5l4.5 4.5V19a2 2 0 0 1-2 2h-10a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Z"/><path d="M13.5 3v5h5M8.5 13h7M8.5 16.5h5"/></symbol>
+      <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4.5v4h-4"/></symbol>
+      <!-- Иконка таблицы (условная, в духе Google Sheets)&nbsp;— цветная, без stroke -->
+      <symbol id="i-sheet" viewBox="0 0 24 24"><path fill="#0F9D58" stroke="none" d="M6 2h8.5L20 7.5V20a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Z"/><path fill="#87CEAC" stroke="none" d="M14.5 2 20 7.5h-4a1.5 1.5 0 0 1-1.5-1.5V2Z"/><path fill="#fff" stroke="none" d="M7.5 10.5h9v7h-9v-7Zm1.3 1.3v1.6h2.6v-1.6H8.8Zm3.9 0v1.6h2.5v-1.6h-2.5Zm-3.9 2.9v1.5h2.6v-1.5H8.8Zm3.9 0v1.5h2.5v-1.5h-2.5Z"/></symbol>
+    </defs>
+  </svg>
+
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+
+  <header class="site-header" data-header>
+    <div class="container header-inner">
+      <a class="logo" href="#top" aria-label="Фикслаб&nbsp;— на главную">
+        <svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true">
+          <rect width="32" height="32" rx="9" fill="#2F6BFF"/>
+          <rect x="10" y="6.5" width="12" height="19" rx="3.2" fill="none" stroke="#fff" stroke-width="2"/>
+          <path d="m13.3 16.2 2 2 3.6-3.9" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="25.5" cy="6.5" r="3.5" fill="#16C784" stroke="#F6F7FB" stroke-width="2"/>
+        </svg>
+        <span class="logo-word">Фикслаб</span>
+      </a>
+
+      <nav class="main-nav" id="main-nav" aria-label="Основная навигация" data-nav>
+        <a href="#prices">Цены</a>
+        <a href="#process">Как работаем</a>
+        <a href="#why">Гарантия</a>
+        <a href="#contacts">Контакты</a>
+        <a class="btn btn-primary nav-cta-mobile" href="#lead">Оставить заявку</a>
+      </nav>
+
+      <div class="header-actions">
+        <a class="header-phone" href="tel:+79000000000">
+          <span class="header-phone-num">+7&nbsp;(900)&nbsp;000-00-00</span>
+          <span class="header-phone-note"><span class="dot dot-live" aria-hidden="true"></span>Открыто до 21:00</span>
+        </a>
+        <a class="btn btn-primary btn-sm header-cta" href="#lead">Заявка</a>
+        <button class="burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="main-nav" data-burger>
+          <svg class="icon" aria-hidden="true"><use href="#i-menu"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow-pill"><span class="dot dot-live" aria-hidden="true"></span>Москва, ул. Примерная, 12 · сегодня до 21:00</p>
+          <h1 class="hero-title">Ремонт телефона за&nbsp;30&nbsp;минут&nbsp;— с&nbsp;гарантией до&nbsp;12&nbsp;месяцев</h1>
+          <p class="hero-lead">Меняем экраны, аккумуляторы и&nbsp;разъёмы при&nbsp;вас. Диагностика бесплатно, а&nbsp;цену фиксируем до&nbsp;начала работ&nbsp;— она не&nbsp;вырастет.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary btn-lg" href="#prices">Узнать цену
+              <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a class="btn btn-secondary btn-lg" href="#lead">Оставить заявку</a>
+          </div>
+          <ul class="trust-chips" aria-label="Наши гарантии">
+            <li class="chip"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Диагностика бесплатно</li>
+            <li class="chip"><svg class="icon" aria-hidden="true"><use href="#i-chip"/></svg>Оригинальные запчасти</li>
+            <li class="chip"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg>Гарантия до&nbsp;12&nbsp;мес.</li>
+          </ul>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="hero-orbit"></div>
+          <!-- Смартфон с «диагностическим» интерфейсом -->
+          <svg class="hero-phone" viewBox="0 0 320 640" role="presentation">
+            <defs>
+              <linearGradient id="g-frame" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#2A3347"/>
+                <stop offset="1" stop-color="#0E1525"/>
+              </linearGradient>
+              <linearGradient id="g-ring" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#5B8CFF"/>
+                <stop offset="1" stop-color="#2F6BFF"/>
+              </linearGradient>
+              <linearGradient id="g-scan" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#2F6BFF" stop-opacity="0"/>
+                <stop offset="1" stop-color="#2F6BFF" stop-opacity=".10"/>
+              </linearGradient>
+              <clipPath id="clip-screen"><rect x="14" y="14" width="292" height="612" rx="40"/></clipPath>
+            </defs>
+            <rect x="2" y="2" width="316" height="636" rx="52" fill="url(#g-frame)"/>
+            <rect x="6" y="6" width="308" height="628" rx="49" fill="none" stroke="#3B465E" stroke-width="1.5"/>
+            <g clip-path="url(#clip-screen)">
+              <rect x="14" y="14" width="292" height="612" fill="#F7F8FC"/>
+              <!-- статус-бар -->
+              <text x="44" y="46" class="ph-t ph-status">9:41</text>
+              <rect x="122" y="28" width="76" height="24" rx="12" fill="#0E1525"/>
+              <rect x="246" y="37" width="22" height="10" rx="3" fill="none" stroke="#0E1525" stroke-width="1.5"/>
+              <rect x="248.5" y="39.5" width="12" height="5" rx="1.5" fill="#0E1525"/>
+              <!-- заголовок -->
+              <text x="34" y="96" class="ph-t ph-cap">FIXLAB · ДИАГНОСТИКА</text>
+              <text x="34" y="124" class="ph-t ph-h">iPhone 13</text>
+              <text x="34" y="146" class="ph-t ph-sub">27 проверок · 12 минут</text>
+              <!-- карточка с кольцом -->
+              <rect x="30" y="166" width="260" height="128" rx="22" fill="#fff"/>
+              <circle cx="92" cy="230" r="40" fill="none" stroke="#E9EDF7" stroke-width="10"/>
+              <circle class="ph-ring" cx="92" cy="230" r="40" fill="none" stroke="url(#g-ring)" stroke-width="10" stroke-linecap="round" stroke-dasharray="251.3" stroke-dashoffset="45" transform="rotate(-90 92 230)"/>
+              <text x="92" y="236" text-anchor="middle" class="ph-t ph-ring-num">82%</text>
+              <text x="150" y="214" class="ph-t ph-label">Состояние</text>
+              <text x="150" y="238" class="ph-t ph-strong">Хорошее</text>
+              <rect x="150" y="252" width="118" height="24" rx="12" fill="#FFF4DD"/>
+              <text x="160" y="268" class="ph-t ph-warn-t">1 узел к замене</text>
+              <!-- список проверок -->
+              <g class="ph-rows">
+                <rect x="30" y="310" width="260" height="214" rx="22" fill="#fff"/>
+                <g transform="translate(48 342)">
+                  <circle r="5" fill="#16C784"/>
+                  <text x="16" y="5" class="ph-t ph-row">Дисплей и тачскрин</text>
+                  <text x="224" y="5" text-anchor="end" class="ph-t ph-ok">Норма</text>
+                </g>
+                <line x1="48" y1="366" x2="272" y2="366" stroke="#EEF1F7"/>
+                <g transform="translate(48 390)">
+                  <circle r="5" fill="#FFB020"/>
+                  <text x="16" y="5" class="ph-t ph-row">Аккумулятор</text>
+                  <text x="224" y="5" text-anchor="end" class="ph-t ph-warn">Износ 23%</text>
+                </g>
+                <line x1="48" y1="414" x2="272" y2="414" stroke="#EEF1F7"/>
+                <g transform="translate(48 438)">
+                  <circle r="5" fill="#16C784"/>
+                  <text x="16" y="5" class="ph-t ph-row">Разъём зарядки</text>
+                  <text x="224" y="5" text-anchor="end" class="ph-t ph-ok">Норма</text>
+                </g>
+                <line x1="48" y1="462" x2="272" y2="462" stroke="#EEF1F7"/>
+                <g transform="translate(48 486)">
+                  <circle r="5" fill="#2F6BFF" class="ph-pulse"/>
+                  <text x="16" y="5" class="ph-t ph-row">Камеры и Face ID</text>
+                  <rect x="168" y="-3" width="56" height="6" rx="3" fill="#E9EDF7"/>
+                  <rect class="ph-progress" x="168" y="-3" width="56" height="6" rx="3" fill="#2F6BFF"/>
+                </g>
+              </g>
+              <!-- кнопка -->
+              <rect x="30" y="540" width="260" height="54" rx="18" fill="#2F6BFF"/>
+              <text x="160" y="573" text-anchor="middle" class="ph-t ph-btn">Замена АКБ · 25 мин</text>
+              <!-- сканирующая линия -->
+              <rect class="ph-scan" x="14" y="160" width="292" height="70" fill="url(#g-scan)"/>
+              <rect x="122" y="610" width="76" height="5" rx="2.5" fill="#0E1525" opacity=".85"/>
+            </g>
+          </svg>
+
+          <div class="float-card float-card--diag">
+            <span class="float-ico float-ico--blue"><svg class="icon"><use href="#i-clock"/></svg></span>
+            <span><b>Диагностика</b><small>15 минут · 0 ₽</small></span>
+          </div>
+          <div class="float-card float-card--warranty">
+            <span class="float-ico float-ico--green"><svg class="icon"><use href="#i-shield"/></svg></span>
+            <span><b>Гарантия 12 мес.</b><small>талон сразу при выдаче</small></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ЦЕНЫ -->
+    <section class="section prices" id="prices" aria-labelledby="prices-title">
+      <div class="container">
+        <div class="section-head section-head--split">
+          <div>
+            <p class="eyebrow">Прайс</p>
+            <h2 class="h2" id="prices-title">Цены на ремонт</h2>
+            <p class="section-lead">Цена «от»&nbsp;— работа и&nbsp;запчасть вместе. Точную сумму мастер назовёт после бесплатной диагностики и&nbsp;зафиксирует до&nbsp;начала ремонта.</p>
+          </div>
+          <p class="sync-badge" data-sync-badge>
+            <svg class="icon icon-sheet" aria-hidden="true"><use href="#i-sheet"/></svg>
+            <span data-sync-text>Загружаем цены из Google Таблицы…</span>
+          </p>
+        </div>
+
+        <div class="price-toolbar">
+          <div class="tabs" role="tablist" aria-label="Бренд" data-tabs>
+            <button class="tab" role="tab" type="button" id="tab-all" aria-selected="true" aria-controls="price-panel" data-brand="all">Все</button>
+            <button class="tab" role="tab" type="button" id="tab-apple" aria-selected="false" aria-controls="price-panel" data-brand="Apple" tabindex="-1">Apple</button>
+            <button class="tab" role="tab" type="button" id="tab-samsung" aria-selected="false" aria-controls="price-panel" data-brand="Samsung" tabindex="-1">Samsung</button>
+            <button class="tab" role="tab" type="button" id="tab-xiaomi" aria-selected="false" aria-controls="price-panel" data-brand="Xiaomi" tabindex="-1">Xiaomi</button>
+            <button class="tab" role="tab" type="button" id="tab-other" aria-selected="false" aria-controls="price-panel" data-brand="other" tabindex="-1">Другие</button>
+          </div>
+          <label class="search">
+            <svg class="icon" aria-hidden="true"><use href="#i-search"/></svg>
+            <span class="visually-hidden">Поиск по модели или услуге</span>
+            <input type="search" placeholder="Модель или услуга: «13 экран»" autocomplete="off" data-search>
+          </label>
+        </div>
+
+        <div class="price-status" data-price-status hidden></div>
+
+        <div class="price-grid" id="price-panel" role="tabpanel" aria-labelledby="tab-all" aria-live="polite" aria-busy="true" data-price-grid>
+          <!-- Скелетоны на время загрузки; заменяются карточками из таблицы -->
+          <div class="price-card skeleton-card" aria-hidden="true"><span class="sk sk-sm"></span><span class="sk sk-lg"></span><span class="sk sk-row"></span><span class="sk sk-row"></span><span class="sk sk-row"></span></div>
+          <div class="price-card skeleton-card" aria-hidden="true"><span class="sk sk-sm"></span><span class="sk sk-lg"></span><span class="sk sk-row"></span><span class="sk sk-row"></span><span class="sk sk-row"></span></div>
+          <div class="price-card skeleton-card" aria-hidden="true"><span class="sk sk-sm"></span><span class="sk sk-lg"></span><span class="sk sk-row"></span><span class="sk sk-row"></span><span class="sk sk-row"></span></div>
+          <div class="price-card skeleton-card" aria-hidden="true"><span class="sk sk-sm"></span><span class="sk sk-lg"></span><span class="sk sk-row"></span><span class="sk sk-row"></span><span class="sk sk-row"></span></div>
+          <div class="price-card skeleton-card" aria-hidden="true"><span class="sk sk-sm"></span><span class="sk sk-lg"></span><span class="sk sk-row"></span><span class="sk sk-row"></span><span class="sk sk-row"></span></div>
+          <div class="price-card skeleton-card" aria-hidden="true"><span class="sk sk-sm"></span><span class="sk sk-lg"></span><span class="sk sk-row"></span><span class="sk sk-row"></span><span class="sk sk-row"></span></div>
+        </div>
+        <noscript><p class="price-status price-status--error">Чтобы увидеть актуальные цены, включите JavaScript или позвоните: +7&nbsp;(900)&nbsp;000-00-00.</p></noscript>
+
+        <div class="price-foot">
+          <p>Нет вашей модели? Ремонтируем realme, OnePlus, Huawei, Vivo и&nbsp;другие&nbsp;— цену подскажем по&nbsp;телефону за&nbsp;пару минут.</p>
+          <a class="link-arrow" href="#lead">Спросить цену <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- КАК РАБОТАЕМ -->
+    <section class="section process" id="process" aria-labelledby="process-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Как мы работаем</p>
+          <h2 class="h2" id="process-title">От заявки до гарантии&nbsp;— четыре шага</h2>
+        </div>
+        <ol class="steps">
+          <li class="step">
+            <span class="step-num">01</span>
+            <h3 class="h3">Заявка</h3>
+            <p>Оставьте заявку на&nbsp;сайте или позвоните. Перезвоним за&nbsp;15&nbsp;минут и&nbsp;сориентируем по&nbsp;цене.</p>
+            <span class="step-time"><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg>2 минуты</span>
+          </li>
+          <li class="step">
+            <span class="step-num">02</span>
+            <h3 class="h3">Бесплатная диагностика</h3>
+            <p>Мастер проверит телефон при&nbsp;вас и&nbsp;назовёт точную стоимость. Откажетесь от&nbsp;ремонта&nbsp;— ничего не&nbsp;платите.</p>
+            <span class="step-time"><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg>15 минут</span>
+          </li>
+          <li class="step">
+            <span class="step-num">03</span>
+            <h3 class="h3">Ремонт при вас</h3>
+            <p>Открытая мастерская: видно каждое действие. Экран или аккумулятор меняем, пока вы пьёте кофе.</p>
+            <span class="step-time"><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg>от 20 минут</span>
+          </li>
+          <li class="step">
+            <span class="step-num">04</span>
+            <h3 class="h3">Гарантия</h3>
+            <p>Выдаём гарантийный талон. Если с&nbsp;заменённой деталью что-то не&nbsp;так&nbsp;— исправим бесплатно.</p>
+            <span class="step-time step-time--green"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg>до 12 месяцев</span>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ПОЧЕМУ МЫ -->
+    <section class="section why" id="why" aria-labelledby="why-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Почему Фикслаб</p>
+          <h2 class="h2" id="why-title">Гарантия и честная цена&nbsp;— в&nbsp;квитанции, а&nbsp;не&nbsp;на&nbsp;словах</h2>
+        </div>
+        <div class="bento">
+          <article class="bento-card bento-card--dark">
+            <span class="feat-ico feat-ico--onDark"><svg class="icon" aria-hidden="true"><use href="#i-tag"/></svg></span>
+            <h3 class="h3">Цена фиксируется до&nbsp;начала ремонта</h3>
+            <p>Мастер называет сумму после диагностики и&nbsp;вписывает её в&nbsp;квитанцию. Доплат «по&nbsp;ходу» не&nbsp;бывает.</p>
+            <div class="receipt" aria-hidden="true">
+              <div class="receipt-row"><span>Замена аккумулятора</span><span>4 490 ₽</span></div>
+              <div class="receipt-row"><span>Диагностика</span><span>0 ₽</span></div>
+              <div class="receipt-row receipt-total"><span>Итого, фиксированно</span><span>4 490 ₽</span></div>
+              <span class="receipt-stamp"><svg class="icon"><use href="#i-check"/></svg>Цена согласована</span>
+            </div>
+          </article>
+          <article class="bento-card">
+            <span class="feat-ico"><svg class="icon" aria-hidden="true"><use href="#i-chip"/></svg></span>
+            <h3 class="h3">Оригинальные запчасти</h3>
+            <p>Для iPhone и&nbsp;Samsung&nbsp;— оригинал или сертифицированные аналоги. Тип детали указан в&nbsp;прайсе.</p>
+          </article>
+          <article class="bento-card">
+            <span class="feat-ico feat-ico--green"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg></span>
+            <h3 class="h3">Гарантия до&nbsp;12&nbsp;месяцев</h3>
+            <p>На экраны и&nbsp;аккумуляторы. Гарантийный талон&nbsp;— сразу при&nbsp;выдаче телефона.</p>
+          </article>
+          <article class="bento-card">
+            <span class="feat-ico"><svg class="icon" aria-hidden="true"><use href="#i-eye"/></svg></span>
+            <h3 class="h3">Ремонт при&nbsp;вас</h3>
+            <p>Телефон не&nbsp;уносят «в&nbsp;подсобку»: мастерская за&nbsp;стеклом, всё видно.</p>
+          </article>
+          <article class="bento-card">
+            <span class="feat-ico"><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg></span>
+            <h3 class="h3">Курьер по&nbsp;Москве</h3>
+            <p>Заберём и&nbsp;вернём телефон в&nbsp;пределах МКАД&nbsp;— 490&nbsp;₽ в&nbsp;обе стороны.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ЗАЯВКА -->
+    <section class="section lead" id="lead" aria-labelledby="lead-title">
+      <div class="container">
+      <div class="lead-grid">
+        <div class="lead-intro">
+          <p class="eyebrow eyebrow--onDark">Заявка на ремонт</p>
+          <h2 class="h2" id="lead-title">Перезвоним за&nbsp;15&nbsp;минут</h2>
+          <p class="lead-text">Оставьте контакты и&nbsp;модель&nbsp;— мастер подскажет точную цену и&nbsp;забронирует запчасть.</p>
+          <ul class="lead-list">
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Без предоплаты</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Запчасть отложим на&nbsp;24&nbsp;часа</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Время визита&nbsp;— удобное вам</li>
+          </ul>
+          <p class="lead-sheet-note">
+            <svg class="icon icon-sheet" aria-hidden="true"><use href="#i-sheet"/></svg>
+            <span>Заявка сразу появляется в&nbsp;Google Таблице сервиса&nbsp;— её никто не&nbsp;потеряет.</span>
+          </p>
+        </div>
+
+        <div class="form-card" data-form-card>
+          <form class="lead-form" novalidate data-lead-form>
+            <div class="field">
+              <label for="f-name">Имя</label>
+              <input id="f-name" name="name" type="text" autocomplete="given-name" placeholder="Как к вам обращаться" aria-describedby="e-name" required>
+              <p class="field-error" id="e-name" data-error-for="name"></p>
+            </div>
+            <div class="field">
+              <label for="f-phone">Телефон</label>
+              <input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7 (___) ___-__-__" aria-describedby="e-phone" required>
+              <p class="field-error" id="e-phone" data-error-for="phone"></p>
+            </div>
+            <div class="field">
+              <label for="f-model">Модель телефона</label>
+              <input id="f-model" name="model" type="text" placeholder="Например, iPhone 13" list="models-list" aria-describedby="e-model" required>
+              <datalist id="models-list" data-models-list></datalist>
+              <p class="field-error" id="e-model" data-error-for="model"></p>
+            </div>
+            <div class="field">
+              <label for="f-issue">Что случилось</label>
+              <div class="select-wrap">
+                <select id="f-issue" name="issue" aria-describedby="e-issue" required>
+                  <option value="">Выберите неисправность</option>
+                  <option>Разбит экран</option>
+                  <option>Быстро садится батарея</option>
+                  <option>Не заряжается</option>
+                  <option>Не работает камера</option>
+                  <option>Разбито заднее стекло</option>
+                  <option>Попала вода</option>
+                  <option>Другое</option>
+                </select>
+              </div>
+              <p class="field-error" id="e-issue" data-error-for="issue"></p>
+            </div>
+            <div class="field field--full">
+              <label for="f-comment">Комментарий <span class="label-opt">необязательно</span></label>
+              <textarea id="f-comment" name="comment" rows="3" placeholder="Когда удобно приехать, что уже пробовали" aria-describedby="e-comment"></textarea>
+              <p class="field-error" id="e-comment" data-error-for="comment"></p>
+            </div>
+            <!-- Honeypot: скрытое поле, люди его не видят и не заполняют, боты&nbsp;— заполняют -->
+            <div class="hp" aria-hidden="true">
+              <label for="f-website">Сайт</label>
+              <input id="f-website" name="website" type="text" tabindex="-1" autocomplete="off">
+            </div>
+            <div class="field field--full">
+              <label class="consent">
+                <input type="checkbox" name="consent" aria-describedby="e-consent">
+                <span class="consent-box" aria-hidden="true"><svg class="icon"><use href="#i-check"/></svg></span>
+                <span>Согласен на&nbsp;обработку персональных данных по&nbsp;<a href="#privacy">политике конфиденциальности</a></span>
+              </label>
+              <p class="field-error" id="e-consent" data-error-for="consent"></p>
+            </div>
+            <div class="form-foot field--full">
+              <button class="btn btn-primary btn-lg btn-block" type="submit" data-submit>
+                <span data-submit-label>Отправить заявку</span>
+                <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+              </button>
+              <p class="form-hint">Перезваниваем с&nbsp;10:00 до&nbsp;21:00. Без спама и&nbsp;рассылок.</p>
+            </div>
+            <p class="form-error" role="alert" data-form-error hidden></p>
+          </form>
+
+          <div class="form-success" data-form-success hidden tabindex="-1">
+            <span class="success-ico"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></span>
+            <h3 class="h3">Заявка <span data-lead-id>№ —</span> принята</h3>
+            <p>Перезвоним за&nbsp;15&nbsp;минут с&nbsp;номера +7&nbsp;(900)&nbsp;000-00-00. Если удобнее&nbsp;— напишите в&nbsp;Telegram.</p>
+            <dl class="success-summary" data-success-summary></dl>
+            <button class="btn btn-secondary" type="button" data-form-again>Отправить ещё одну</button>
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section faq" id="faq" aria-labelledby="faq-title">
+      <div class="container">
+      <div class="faq-grid">
+        <div class="section-head">
+          <p class="eyebrow">Вопросы</p>
+          <h2 class="h2" id="faq-title">Частые вопросы</h2>
+          <p class="section-lead">Не&nbsp;нашли ответ&nbsp;— позвоните, мастер ответит сразу.</p>
+          <a class="link-arrow" href="tel:+79000000000">+7&nbsp;(900)&nbsp;000-00-00 <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="faq-list">
+          <details class="faq-item" open>
+            <summary>Сколько длится ремонт?</summary>
+            <p>Замена экрана, аккумулятора или разъёма&nbsp;— от&nbsp;20 до&nbsp;40&nbsp;минут. Сложные случаи (после воды, ремонт платы)&nbsp;— от&nbsp;одного дня, срок скажем после диагностики.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Нужна ли предоплата?</summary>
+            <p>Нет. Платите после ремонта, когда проверили телефон. Предоплату берём только за&nbsp;редкие детали под заказ&nbsp;— и&nbsp;только с&nbsp;вашего согласия.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Что, если ремонт не&nbsp;поможет?</summary>
+            <p>Если неисправность не&nbsp;устранена, вы ничего не&nbsp;платите. Диагностика бесплатна в&nbsp;любом случае.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Какие запчасти вы ставите?</summary>
+            <p>Оригинальные или сертифицированные аналоги&nbsp;— тип детали указан в&nbsp;прайсе и&nbsp;в&nbsp;квитанции. Если есть несколько вариантов, мастер покажет разницу в&nbsp;цене и&nbsp;сроке гарантии.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Сохранятся ли мои фото и&nbsp;данные?</summary>
+            <p>Да. При замене экрана, аккумулятора и&nbsp;разъёма данные не&nbsp;затрагиваются, сброс настроек не&nbsp;нужен.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Что покрывает гарантия?</summary>
+            <p>Заменённую деталь и&nbsp;работу мастера: до&nbsp;12&nbsp;месяцев на&nbsp;экраны и&nbsp;аккумуляторы, 3–6&nbsp;месяцев на&nbsp;остальное. Срок указан в&nbsp;гарантийном талоне.</p>
+          </details>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <!-- КОНТАКТЫ -->
+    <section class="section contacts" id="contacts" aria-labelledby="contacts-title">
+      <div class="container">
+        <div class="contacts-card">
+          <div class="contacts-info">
+            <p class="eyebrow">Контакты</p>
+            <h2 class="h2" id="contacts-title">Приезжайте&nbsp;— ремонт при вас</h2>
+            <dl class="contact-list">
+              <div><dt><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Адрес</dt><dd>Москва, ул. Примерная, 12<br><span class="muted">5 минут пешком от метро «Примерная»</span></dd></div>
+              <div><dt><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg>Часы</dt><dd>Ежедневно, 10:00–21:00</dd></div>
+              <div><dt><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>Телефон</dt><dd><a href="tel:+79000000000">+7&nbsp;(900)&nbsp;000-00-00</a></dd></div>
+            </dl>
+            <div class="messengers">
+              <a class="btn btn-secondary" href="#contacts"><svg class="icon" aria-hidden="true"><use href="#i-send"/></svg>Telegram</a>
+              <a class="btn btn-secondary" href="#contacts"><svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg>WhatsApp</a>
+            </div>
+          </div>
+          <div class="map" aria-label="Схема проезда: Фикслаб на улице Примерной, рядом с метро" role="img">
+            <!-- Стилизованная карта-заглушка (без внешних сервисов) -->
+            <svg viewBox="0 0 600 440" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+              <rect width="600" height="440" fill="#EEF1F7"/>
+              <path d="M-20 360 C 120 330, 180 410, 320 380 S 520 300, 640 330 L 640 460 L -20 460 Z" fill="#DCE7FB"/>
+              <rect x="40" y="40" width="150" height="110" rx="14" fill="#DFF5EA"/>
+              <g fill="#fff" stroke="#E2E6F0">
+                <rect x="220" y="36" width="120" height="70" rx="10"/>
+                <rect x="360" y="36" width="90" height="70" rx="10"/>
+                <rect x="470" y="36" width="110" height="120" rx="10"/>
+                <rect x="220" y="130" width="70" height="90" rx="10"/>
+                <rect x="380" y="180" width="70" height="90" rx="10"/>
+                <rect x="40" y="180" width="150" height="90" rx="10"/>
+                <rect x="470" y="190" width="110" height="80" rx="10"/>
+                <rect x="40" y="290" width="100" height="40" rx="10"/>
+              </g>
+              <g stroke="#fff" stroke-width="16" fill="none" stroke-linecap="round">
+                <path d="M0 165 H600"/>
+                <path d="M205 0 V440"/>
+                <path d="M460 0 V300"/>
+                <path d="M205 280 L600 280"/>
+              </g>
+              <path d="M300 165 C 330 200, 330 250, 360 280" stroke="#FFFFFF" stroke-width="10" fill="none"/>
+              <path d="M205 165 H 350 V 150" stroke="#2F6BFF" stroke-width="4" stroke-dasharray="2 9" stroke-linecap="round" fill="none"/>
+              <g transform="translate(205 165)">
+                <circle r="13" fill="#fff" stroke="#E2E6F0"/>
+                <text y="5" text-anchor="middle" font-size="14" font-weight="800" fill="#D7263D" font-family="Manrope, system-ui, sans-serif">М</text>
+              </g>
+              <text x="40" y="190" dx="10" dy="22" font-size="13" font-weight="600" fill="#8A92A6" font-family="Manrope, system-ui, sans-serif">ул. Примерная</text>
+              <g transform="translate(350 132)">
+                <circle r="34" fill="#2F6BFF" opacity=".12"/>
+                <path d="M0 14 C -14 0, -18 -8, -18 -16 A 18 18 0 0 1 18 -16 C 18 -8, 14 0, 0 14 Z" fill="#2F6BFF" transform="translate(0 -14)"/>
+                <circle cy="-30" r="6.5" fill="#fff"/>
+              </g>
+              <g transform="translate(372 76)">
+                <rect width="118" height="40" rx="12" fill="#0E1525"/>
+                <text x="14" y="25" font-size="14" font-weight="700" fill="#fff" font-family="Manrope, system-ui, sans-serif">Фикслаб · 12</text>
+              </g>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a class="logo" href="#top" aria-label="Фикслаб&nbsp;— наверх">
+          <svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true">
+            <rect width="32" height="32" rx="9" fill="#2F6BFF"/>
+            <rect x="10" y="6.5" width="12" height="19" rx="3.2" fill="none" stroke="#fff" stroke-width="2"/>
+            <path d="m13.3 16.2 2 2 3.6-3.9" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span class="logo-word">Фикслаб</span>
+        </a>
+        <p class="muted">Ремонт смартфонов в&nbsp;Москве.<br>Ежедневно 10:00–21:00.</p>
+      </div>
+      <nav class="footer-nav" aria-label="Ссылки в подвале">
+        <a href="#prices">Цены</a>
+        <a href="#process">Как работаем</a>
+        <a href="#faq">Вопросы</a>
+        <a href="#contacts">Контакты</a>
+        <a href="#privacy" id="privacy">Политика обработки персональных данных</a>
+      </nav>
+      <div class="footer-legal">
+        <p>ИП Примеров П.&nbsp;П. · ИНН 000000000000 · ОГРНИП 000000000000000</p>
+        <p class="demo-note"><svg class="icon" aria-hidden="true"><use href="#i-doc"/></svg>Демо-версия сайта. Название, адрес и&nbsp;телефон&nbsp;— условные.</p>
+        <p>© 2026 Фикслаб</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Липкая нижняя панель на мобильных -->
+  <div class="mobile-bar" data-mobile-bar>
+    <a class="btn btn-secondary" href="tel:+79000000000"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>Позвонить</a>
+    <a class="btn btn-primary" href="#lead">Заявка<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+  </div>
+</body>
+</html>

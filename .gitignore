@@ -1,0 +1,10 @@
+# Внутренние файлы — не публикуются
+tests/
+scripts/
+docs/
+PLAN.md
+SPEC.md
+
+node_modules/
+.DS_Store
+Thumbs.db
