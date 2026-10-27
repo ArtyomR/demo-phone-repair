@@ -4,6 +4,7 @@ scripts/
 docs/
 PLAN.md
 SPEC.md
+readme_dev.md
 
 node_modules/
 .DS_Store
